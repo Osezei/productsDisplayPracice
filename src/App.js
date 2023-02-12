@@ -6,6 +6,8 @@ import Contact from "./pages/Contact";
 import ProductsPage from "./pages/ProductsPage";
 import SingleProductPage from "./pages/SingleProductPage";
 import Error from "./pages/Error";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -15,6 +17,14 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/products" element={<ProductsPage />} />
+        <Route exact path="/cart" element={<Cart />} />
+
+        {/* <Route exact path="/products/:id">
+          <SingleProductPage />
+        </Route> */}
+
+        {/* <Route exact path="/checkout" element={<Checkout />} /> */}
+
         <Route exact path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

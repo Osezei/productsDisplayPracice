@@ -9,12 +9,91 @@ const AppProvider = function ({ children }) {
     products: footWears,
     allKicks: footWears,
     activeFilter: "all",
+    min_price: 0,
+    max_price: 3000,
+    price: "",
+    cart: [],
+    itemTotal: 0,
+    item_amount: 0,
+    tempStock: 1,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const decreaseAmount = (value, stock) => {
+    dispatch({ type: "DECREASE_AMOUNT", payload: { value, stock } });
+  };
+  const increaseAmount = (value, stock) => {
+    dispatch({ type: "INCREASE_AMOUNT", payload: { value, stock } });
+  };
+
+  useEffect(() => {
+    dispatch({ type: "SET_PRICE" });
+  });
+
+  const sort = (value) => {
+    dispatch({ type: "SORT_HANDLE", payload: value });
+  };
+
+  const category = (value) => {
+    dispatch({ type: "CATEGORY_HANDLE", payload: value });
+  };
+
+  const company = (value) => {
+    dispatch({ type: "COMPANY_HANDLE", payload: value });
+  };
+
+  const updatePrice = (value) => {
+    dispatch({ type: "PRICE_UPDATE", payload: value });
+  };
+
+  const clearFilters = () => {
+    dispatch({ type: "CLEAR_FILTER" });
+  };
+
+  useEffect(() => {
+    dispatch({ type: "COUNT_CART_TOTALS" });
+    //SET LOCAL STORAGE
+  }, [state.cart]);
+
+  const addToCart = (id, amount, product) => {
+    dispatch({ type: "ADD_TO_CART", payload: { id, amount, product } });
+  };
+
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
+  const increaseCart = (id, value, max) => {
+    dispatch({ type: "INCREASE_CART", payload: { id, value, max } });
+  };
+
+  const decreaseCart = (id, value, max) => {
+    dispatch({ type: "DECREASE_CART", payload: { id, value, max } });
+  };
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: { id } });
+  };
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider
+      value={{
+        ...state,
+        decreaseAmount,
+        increaseAmount,
+        sort,
+        category,
+        company,
+        updatePrice,
+        clearFilters,
+        addToCart,
+        clearCart,
+        increaseCart,
+        decreaseCart,
+        removeItem,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
   );
 };
 

@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Filter from "../components/Filter";
 import Header from "../components/Header";
+import Product from "../components/Product";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Navigation />
       <SideBar />
       <Hero />
+      <Product />
       <Services />
       <Footer />
       {/* <Filter /> */}
