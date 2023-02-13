@@ -2,12 +2,16 @@ import React from "react";
 import logo from "../Images/logo.png";
 import styled from "styled-components";
 
+import { FaKickstarter } from "react-icons/fa";
+import { FiUser } from "react-icons/fi";
+import { FiUserCheck } from "react-icons/fi";
+
 const Navigation = () => {
   return (
     <Main className="container">
-      <div>
-        <img src={logo} alt="logo-name" className="image" />
-      </div>
+      <h3 className="text-4xl text-green-700">
+        <FaKickstarter />
+      </h3>
     </Main>
   );
 };

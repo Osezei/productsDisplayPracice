@@ -7,7 +7,7 @@ import "../index.css";
 const Services = () => {
   return (
     <Main className="container ">
-      <h2 className="text-3xl textbold mt-4 mb-2 text-center text-green-700 text-5xl font-bold">
+      <h2 className="text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
         Services
       </h2>
       <section className="grid grid-cols-3">

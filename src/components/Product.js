@@ -10,31 +10,31 @@ const Product = () => {
     return <Error />;
   }
 
-  //className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
-
   return (
     <Main className="container ">
       <div>
-        <h2 className="text-3xl textbold mt-4 mb-2 text-center text-green-700 text-5xl font-bold">
+        <h2 className="text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
           Features
         </h2>
       </div>
-      <section className="grid grid-cols-3 relative">
+      <section className="grid grid-cols-3 relative gap-10">
         {footWears.slice(4, 7).map((footwear) => {
           return (
-            <article key={footwear.id} className="box">
-              <h4 className="display absolute font-bold text-3xl text-green-700 ">
-                {footwear.name}
-              </h4>
-              <div className="">
+            <article key={footwear.id} className="picture-container p-10">
+              <div className="overlay">
+                <h4 className="font-bold text-3xl text-green-700 ">
+                  {footwear.name}
+                </h4>
+              </div>
+              <div className=" h-full">
                 <img
-                  className="image"
+                  className="image w-30 h-full"
                   src={footwear.image}
                   alt={footwear.name}
                 />
               </div>
 
-              <h5>${footwear.price}</h5>
+              <h5 className="font-bold text-sm">${footwear.price}</h5>
               {/* <Link to={`/products/${footwear.id}`}>Details</Link> */}
             </article>
           );
@@ -46,22 +46,31 @@ const Product = () => {
 
 export default Product;
 const Main = styled.article`
-  .box {
-    width: 15rem;
+  .picture-container {
+    position: relative;
   }
-  .image {
-    width: 200px;
-    height: 200px;
-  }
-  .image:hover {
-    opacity: 0.3;
-    transition: 0.3s;
-  }
-  .display {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
+    transition: opacity 0.25s;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  .display:hover {
+  .overlay:hover {
     opacity: 1;
-    transition: 0.3s;
+  }
+  .overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+  }
+  .overlay:hover > * {
+    transform: translateY(0);
   }
 `;
