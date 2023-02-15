@@ -19,12 +19,12 @@ const ProductList = () => {
   } = useGlobalContext();
 
   const noOfProducts = products.length;
-  let category_list = [];
+  let categorylist = [];
   let company_list = [];
 
   {
     footWears.map((product) => {
-      category_list.push(product.category_list);
+      categorylist.push(product.categorylist);
     });
   }
   {
@@ -33,7 +33,7 @@ const ProductList = () => {
     });
   }
   return (
-    <section>
+    <section className="container">
       <div>
         <h2>Products</h2>
       </div>
@@ -41,7 +41,7 @@ const ProductList = () => {
         <h3>category</h3>
       </div>
       <ul>
-        {["all", ...new Set(category_list)].map((item, index) => {
+        {["all", ...new Set(categorylist)].map((item, index) => {
           return (
             <li
               key={index}
@@ -57,7 +57,7 @@ const ProductList = () => {
       <div>
         <h3>brand</h3>
 
-        <ul>
+        {/* <ul>
           {["all", ...new Set(company_list)].map((item, index) => {
             return (
               <li
@@ -70,7 +70,7 @@ const ProductList = () => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
 
         <div>
           <h3>price</h3>

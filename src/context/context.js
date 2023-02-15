@@ -5,6 +5,15 @@ import reducer from "../reducer/reducer";
 const AppContext = React.createContext();
 
 const AppProvider = function ({ children }) {
+  const getLocalStorage = () => {
+    let cart = localStorage.getItem("cart");
+    if (cart) {
+      return JSON.parse(localStorage.getItem("cart"));
+    } else {
+      return [];
+    }
+  };
+
   const initialState = {
     products: footWears,
     allKicks: footWears,
@@ -12,9 +21,9 @@ const AppProvider = function ({ children }) {
     min_price: 0,
     max_price: 3000,
     price: "",
-    cart: [],
-    itemTotal: 0,
-    item_amount: 0,
+    cart: getLocalStorage(),
+    total_items: 0,
+    total_amount: 0,
     tempStock: 1,
   };
 
@@ -29,7 +38,7 @@ const AppProvider = function ({ children }) {
 
   useEffect(() => {
     dispatch({ type: "SET_PRICE" });
-  });
+  }, []);
 
   const sort = (value) => {
     dispatch({ type: "SORT_HANDLE", payload: value });
@@ -53,7 +62,7 @@ const AppProvider = function ({ children }) {
 
   useEffect(() => {
     dispatch({ type: "COUNT_CART_TOTALS" });
-    //SET LOCAL STORAGE
+    localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
   const addToCart = (id, amount, product) => {
