@@ -19,11 +19,9 @@ function App() {
         <Route exact path="/products" element={<ProductsPage />} />
         <Route exact path="/cart" element={<Cart />} />
 
-        {/* <Route exact path="/products/:id">
-          <SingleProductPage />
-        </Route> */}
+        <Route exact path="/products/:id" element={<SingleProductPage />} />
 
-        {/* <Route exact path="/checkout" element={<Checkout />} /> */}
+        <Route exact path="/checkout" element={<Checkout />} />
 
         <Route exact path="*" element={<Error />} />
       </Routes>

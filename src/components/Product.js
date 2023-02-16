@@ -1,15 +1,10 @@
 import React from "react";
 import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
-import Error from "./Error";
 import styled from "styled-components";
 import { FaRegHeart } from "react-icons/fa";
 
 const Product = () => {
-  if (footWears.length < 1) {
-    return <Error />;
-  }
-
   return (
     <Main className="container ">
       <div>
@@ -22,9 +17,14 @@ const Product = () => {
           return (
             <article key={footwear.id} className="picture-container p-10">
               <div className="overlay">
-                <h4 className="font-bold text-3xl text-green-700 ">
-                  {footwear.name}
-                </h4>
+                <Link to={`/products/${footwear.id}`}>
+                  <h4 className="font-bold text-3xl text-green-700 ">
+                    {footwear.name}
+                  </h4>
+                  <h5 className="font-bold text-xl text-white text-align-center">
+                    ${footwear.price}
+                  </h5>
+                </Link>
               </div>
               <div className=" h-full">
                 <img
@@ -34,8 +34,7 @@ const Product = () => {
                 />
               </div>
 
-              <h5 className="font-bold text-sm">${footwear.price}</h5>
-              {/* <Link to={`/products/${footwear.id}`}>Details</Link> */}
+              {/* <h5 className="font-bold text-sm">${footwear.price}</h5> */}
             </article>
           );
         })}

@@ -89,7 +89,7 @@ const reducer = function (state, action) {
     };
   }
   if (action.type === "CLEAR_FILTER") {
-    let maxPrice = state.allProducts.map((product) => product.price);
+    let maxPrice = state.allKicks.map((product) => product.price);
     maxPrice = Math.max(...maxPrice);
     return {
       ...state,

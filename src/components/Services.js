@@ -13,8 +13,8 @@ const Services = () => {
       <section className="grid grid-cols-3">
         {servicesOffer.map((services) => {
           return (
-            <article className="text-center p-2 relative ">
-              <div key={services.id} className="box p-5">
+            <article key={services.id} className="text-center p-2 relative ">
+              <div className="box p-5">
                 <h3 className="text-xl font-bold capitalize text-gray-700">
                   {services.service}
                 </h3>

@@ -19,12 +19,12 @@ const ProductList = () => {
   } = useGlobalContext();
 
   const noOfProducts = products.length;
-  let categorylist = [];
-  let company_list = [];
+  let category_list = [""];
+  let company_list = [""];
 
   {
     footWears.map((product) => {
-      categorylist.push(product.categorylist);
+      category_list.push(product.category_list);
     });
   }
   {
@@ -41,10 +41,13 @@ const ProductList = () => {
         <h3>category</h3>
       </div>
       <ul>
-        {["all", ...new Set(categorylist)].map((item, index) => {
+        {["all", ...new Set(category_list)].map((item, index) => {
           return (
             <li
               key={index}
+              className={`${
+                activeFilter === item ? "text-[red] font-bold" : null
+              }`}
               onClick={() => {
                 category(item);
               }}
@@ -57,7 +60,7 @@ const ProductList = () => {
       <div>
         <h3>brand</h3>
 
-        {/* <ul>
+        <ul>
           {["all", ...new Set(company_list)].map((item, index) => {
             return (
               <li
@@ -70,7 +73,7 @@ const ProductList = () => {
               </li>
             );
           })}
-        </ul> */}
+        </ul>
 
         <div>
           <h3>price</h3>
@@ -110,7 +113,8 @@ const ProductList = () => {
               <div>
                 <img src={image} alt={name} />
                 <div>
-                  <Link to={`/products/${id}`}>search</Link>
+                  {/* <button onClick={`/products/${id}`}>Add to Cart</button> */}
+                  <Link to={`/products/${id}`}>Add To Cart</Link>
                 </div>
               </div>
               <div>
