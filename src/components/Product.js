@@ -21,7 +21,7 @@ const Product = () => {
                   <h4 className="font-bold text-3xl text-green-700 ">
                     {footwear.name}
                   </h4>
-                  <h5 className="font-bold text-xl text-white text-align-center">
+                  <h5 className="font-bold text-xl text-white text-center">
                     ${footwear.price}
                   </h5>
                 </Link>

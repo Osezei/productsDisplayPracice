@@ -4,13 +4,25 @@ import "./index.css";
 import App from "./App";
 import { AppProvider } from "./context/context";
 import reportWebVitals from "./reportWebVitals";
+import { Auth0Provider } from "@auth0/auth0-react";
+import { UserProvider } from "./userContext";
+
+//domain: dev-hfwhmvocsxoi62dn.us.auth0.com
+//client ID:  Z70UA27FvVZzQpT1LN7JFLX6PI6BDg9C
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
+    <Auth0Provider
+      domain="dev-hfwhmvocsxoi62dn.us.auth0.com"
+      clientId="Z70UA27FvVZzQpT1LN7JFLX6PI6BDg9C"
+      redirectUri={window.location.origin}
+      cacheLocation="localstorage"
+    >
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </Auth0Provider>
   </React.StrictMode>
 );
 

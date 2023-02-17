@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
+import { useUserContext } from "../userContext";
 
 const Cart = () => {
   const {
@@ -11,6 +12,7 @@ const Cart = () => {
     decreaseCart,
     removeItem,
   } = useGlobalContext();
+  const { loginWithRedirect, myUser, logout } = useUserContext();
   if (cart.length < 1) {
     return (
       <section>
@@ -45,7 +47,9 @@ const Cart = () => {
                     <img src={image} alt={name} />
                     {name}
                   </td>
+
                   <td>${price.toFixed(2)}</td>
+
                   <td>
                     <div>
                       <button
@@ -57,7 +61,7 @@ const Cart = () => {
                       <span>{amount}</span>
                       <button
                         type="button"
-                        onClick={increaseCart(id, amount, max)}
+                        onClick={() => increaseCart(id, amount, max)}
                       >
                         +
                       </button>
