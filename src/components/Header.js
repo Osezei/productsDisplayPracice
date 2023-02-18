@@ -6,17 +6,17 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <Main className=" flex justify-between bg-green-700 font-normal text-sm text-white">
-      <div className="sm:hidden md:flex justify-between">
+      <div className="lg:flex justify-between sm:hidden">
         <span className="pr-1 icon-arrangement">
           <BsTelephone />
         </span>
         <p>08055223390</p>
       </div>
-      <div className="flex justify-between lg:text-red-500">
+      <div className="flex justify-between">
         <p className="pr-3 ">Get 50% Off on Selected Items</p> |{" "}
         <p className="pl-3">Shop Now</p>
       </div>
-      <div className="md:hidden sm:hidden lg:flex justify-between">
+      <div className="flex justify-between">
         <div className="flex justify-between">
           <p className="pr-1">Eng</p>
           <span className="icon-arrangement pr-1">

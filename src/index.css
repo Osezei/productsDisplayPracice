@@ -33,3 +33,6 @@ body {
     font-size: 70%;
   }
 }
+.page {
+  height: 90vh;
+}

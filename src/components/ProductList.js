@@ -1,5 +1,5 @@
 import React from "react";
-
+import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
@@ -19,114 +19,155 @@ const ProductList = () => {
   } = useGlobalContext();
 
   const noOfProducts = products.length;
-  let category_list = [""];
-  let company_list = [""];
+  let category_list = [];
+  let company_list = [];
 
-  {
-    footWears.map((product) => {
-      category_list.push(product.category_list);
-    });
-  }
-  {
-    footWears.map((product) => {
-      company_list.push(product.company_list);
-    });
-  }
+  //   {
+  //     footWears.map((product) => {
+  //       category_list.push(product.category_list);
+  //     });
+  //   }
+  //   {
+  //     footWears.map((product) => {
+  //       company_list.push(product.company_list);
+  //     });
+  //   }
   return (
-    <section className="container">
-      <div>
-        <h2>Products</h2>
+    <Main className="container">
+      <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
+        <h2 className="">Products</h2>
       </div>
-      <div>
-        <h3>category</h3>
-      </div>
-      <ul>
-        {["all", ...new Set(category_list)].map((item, index) => {
-          return (
-            <li
-              key={index}
-              className={`${
-                activeFilter === item ? "text-[red] font-bold" : null
-              }`}
-              onClick={() => {
-                category(item);
-              }}
-            >
-              {item}
-            </li>
-          );
-        })}
-      </ul>
-      <div>
-        <h3>brand</h3>
+      {/* listing */}
+      <div className="flex justify-between">
+        {/* section */}
+        <section>
+          {/* <div>
+            <h3>category</h3>
+          </div> */}
+          {/* <ul>
+            {["all", ...new Set(category_list)].map((item, index) => {
+              return (
+                <li
+                  key={index}
+                  className={`${
+                    activeFilter === item ? "text-[red] font-bold" : null
+                  }`}
+                  onClick={() => {
+                    category(item);
+                  }}
+                >
+                  {item}
+                </li>
+              );
+            })}
+          </ul> */}
+          <div className="flex space-between">
+            {/* <h3>brand</h3>
 
-        <ul>
-          {["all", ...new Set(company_list)].map((item, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => {
-                  company(item);
-                }}
+            <ul>
+              {["all", ...new Set(company_list)].map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      company(item);
+                    }}
+                  >
+                    {item}
+                  </li>
+                );
+              })}
+            </ul> */}
+
+            <div className="flex justify-between items-center">
+              <h3 className="font-semibold text-xl">Price :</h3>
+              <p className="font-semibold text-xl  pl-2 pr-2">${price}</p>
+              <input
+                type="range"
+                name={price}
+                min={min_price}
+                max={max_price}
+                value={price}
+                onChange={(e) => updatePrice(e.target.value)}
+                className=""
+              />
+            </div>
+
+            <div>
+              <button
+                onClick={clearFilters}
+                className="ml-10 rounded-full pt-2 pb-2 pr-4 pl-4 bg-green-700 hover:bg-red-700 text-white text-sm"
               >
-                {item}
-              </li>
-            );
-          })}
-        </ul>
-
-        <div>
-          <h3>price</h3>
-          <p>${price}</p>
-          <input
-            type="range"
-            name={price}
-            min={min_price}
-            max={max_price}
-            value={price}
-            onChange={(e) => updatePrice(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <button onClick={clearFilters}>clear filters</button>
+                Clear filters
+              </button>
+            </div>
+          </div>
+        </section>
+        <div className="flex justify-between items-center">
+          <span className="pr-2">Sort by</span>
+          <div>
+            <select
+              name=""
+              onChange={(e) => sort(e.target.value)}
+              className=" p-1 border-black border-solid border-2 rounded-full"
+            >
+              <option value="lowest">Price (Lowest)</option>
+              <option value="highest">Price (Highest)</option>
+              <option value="ascending">Name (A-Z)</option>
+              <option value="descending">Name (Z-A)</option>
+            </select>
+          </div>
         </div>
       </div>
-
-      <div>
-        <h2>{noOfProducts} products are available</h2>
-        <span>Sort by</span>
-        <div>
-          <select name="" onChange={(e) => sort(e.target.value)}>
-            <option value="lowest">Price (Lowest)</option>
-            <option value="highest">Price (Highest)</option>
-            <option value="ascending">Name (A-Z)</option>
-            <option value="descending">Name (Z-A)</option>
-          </select>
-        </div>
+      {/* end of list */}
+      <div className="pt-8 pb-4 font-semibold text-3xl">
+        <p>{noOfProducts} products are available!</p>
       </div>
-      <div>
+      <div className="grid grid-cols-3 gap-10">
         {products.map((footWears) => {
-          const { image, name, id, price } = footWears;
+          const { image, name, id, price, description } = footWears;
           return (
-            <div key={id}>
-              <div>
-                <img src={image} alt={name} />
-                <div>
-                  {/* <button onClick={`/products/${id}`}>Add to Cart</button> */}
-                  <Link to={`/products/${id}`}>Add To Cart</Link>
-                </div>
+            <div key={id} className=" text-black pt-4 pb-4">
+              <div className="image-container pb-4 relative">
+                <img src={image} alt={name} className="image rounded-md" />
               </div>
-              <div>
-                <h3>{name}</h3>
-                <h2>${price}</h2>
+              <div className="flex justify-between text-xl font-semibold">
+                <h3>{name.substring(0, 15)}...</h3>
+                <h2>
+                  <span className=" text-sm">$</span>
+                  {price}
+                </h2>
+              </div>
+              <div className="pt-2 pb-2 text-sm font-normal">
+                <p>{description.substring(0, 50)} ...</p>
+              </div>
+              <div className="text-sm font-semibold pt-6 pb-3 ">
+                <Link
+                  className="border-solid border-2 pt-4 pb-4 pr-10 pl-10 border-green-700 rounded-full hover:text-white hover:bg-green-700"
+                  to={`/products/${id}`}
+                >
+                  View Product
+                </Link>
               </div>
             </div>
           );
         })}
       </div>
-    </section>
+    </Main>
   );
 };
 
 export default ProductList;
+
+const Main = styled.div`
+  .image-container {
+    width: 100%;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+`;
