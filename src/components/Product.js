@@ -3,19 +3,19 @@ import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaRegHeart } from "react-icons/fa";
-
+//grid grid-flow-row-3 content-center md:grid-cols-3 relative gap-10
 const Product = () => {
   return (
     <Main className="container ">
       <div>
-        <h2 className="text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
+        <h2 className="text-2xl lg:text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
           Features
         </h2>
       </div>
-      <section className="grid grid-cols-3 relative gap-10">
+      <section className="grid grid-cols-3 relative gap-10 place-items-center">
         {footWears.slice(4, 7).map((footwear) => {
           return (
-            <article key={footwear.id} className="picture-container p-10">
+            <article key={footwear.id} className="picture-container p-10 ">
               <div className="overlay">
                 <Link to={`/products/${footwear.id}`}>
                   <h4 className="font-bold text-3xl text-green-700 ">
@@ -26,9 +26,9 @@ const Product = () => {
                   </h5>
                 </Link>
               </div>
-              <div className=" h-full">
+              <div className=" w-full">
                 <img
-                  className="image w-30 h-full"
+                  className="image w-32"
                   src={footwear.image}
                   alt={footwear.name}
                 />
