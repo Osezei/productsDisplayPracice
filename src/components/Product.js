@@ -2,17 +2,16 @@ import React from "react";
 import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaRegHeart } from "react-icons/fa";
-//grid grid-flow-row-3 content-center md:grid-cols-3 relative gap-10
+
 const Product = () => {
   return (
     <Main className="container ">
       <div>
-        <h2 className="text-2xl lg:text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
+        <h2 className="text-2xl lg:text-3xl textbold text-white bg-green-700 font-bold text-center p-2">
           Features
         </h2>
       </div>
-      <section className="grid grid-cols-3 relative gap-10 place-items-center">
+      <section className="grid grid-cols-3 relative gap-2 place-items-center ">
         {footWears.slice(4, 7).map((footwear) => {
           return (
             <article key={footwear.id} className="picture-container p-10 ">
@@ -26,15 +25,13 @@ const Product = () => {
                   </h5>
                 </Link>
               </div>
-              <div className=" w-full">
+              <div className="image-container">
                 <img
-                  className="image w-32"
+                  className="image w-3/4"
                   src={footwear.image}
                   alt={footwear.name}
                 />
               </div>
-
-              {/* <h5 className="font-bold text-sm">${footwear.price}</h5> */}
             </article>
           );
         })}
@@ -71,5 +68,8 @@ const Main = styled.article`
   }
   .overlay:hover > * {
     transform: translateY(0);
+  }
+  .image-container {
+    width: 100%;
   }
 `;

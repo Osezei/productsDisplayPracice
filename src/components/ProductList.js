@@ -22,23 +22,23 @@ const ProductList = () => {
   let category_list = [];
   let company_list = [];
 
-  //   {
-  //     footWears.map((product) => {
-  //       category_list.push(product.category_list);
-  //     });
-  //   }
-  //   {
-  //     footWears.map((product) => {
-  //       company_list.push(product.company_list);
-  //     });
-  //   }
+  // {
+  //   footWears.map((product) => {
+  //     category_list.push(product.category_list);
+  //   });
+  // }
+  // {
+  //   footWears.map((product) => {
+  //     company_list.push(product.company_list);
+  //   });
+  // }
   return (
-    <Main className="container">
-      <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
+    <Main className="container py-10">
+      {/* <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
         <h2 className="">Products</h2>
-      </div>
+      </div> */}
       {/* listing */}
-      <div className="flex justify-between">
+      <div className="grid grid-flow-col-3">
         {/* section */}
         <section>
           {/* <div>
@@ -61,7 +61,7 @@ const ProductList = () => {
               );
             })}
           </ul> */}
-          <div className="flex space-between">
+          <div className="">
             {/* <h3>brand</h3>
 
             <ul>
@@ -79,9 +79,9 @@ const ProductList = () => {
               })}
             </ul> */}
 
-            <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-xl">Price :</h3>
-              <p className="font-semibold text-xl  pl-2 pr-2">${price}</p>
+            <div className="">
+              <h3 className="font-medium text-xl">Price :</h3>
+              <p className="font-medium text-xl  pl-2 pr-2">${price}</p>
               <input
                 type="range"
                 name={price}
@@ -89,14 +89,14 @@ const ProductList = () => {
                 max={max_price}
                 value={price}
                 onChange={(e) => updatePrice(e.target.value)}
-                className=""
+                className="mx-2"
               />
             </div>
 
             <div>
               <button
                 onClick={clearFilters}
-                className="ml-10 rounded-full pt-2 pb-2 pr-4 pl-4 bg-green-700 hover:bg-red-700 text-white text-sm"
+                className=" rounded-full py-1 pr-2 pl-2 bg-green-700 hover:bg-red-700 text-white text-sm"
               >
                 Clear filters
               </button>
@@ -109,7 +109,7 @@ const ProductList = () => {
             <select
               name=""
               onChange={(e) => sort(e.target.value)}
-              className=" p-1 border-black border-solid border-2 rounded-full"
+              className=" border-black border-solid border-2 rounded-full"
             >
               <option value="lowest">Price (Lowest)</option>
               <option value="highest">Price (Highest)</option>
@@ -120,7 +120,7 @@ const ProductList = () => {
         </div>
       </div>
       {/* end of list */}
-      <div className="pt-8 pb-4 font-semibold text-3xl">
+      <div className="pt-8 pb-4 font-semibold text-2xl">
         <p>{noOfProducts} products are available!</p>
       </div>
       <div className="grid grid-cols-3 gap-10">

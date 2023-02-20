@@ -6,18 +6,18 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Product from "../components/Product";
+import ProductList from "../components/ProductList";
 
 const Home = () => {
   return (
-    <main>
+    <div>
       <Header />
       <Navigation />
       <SideBar />
       <Hero />
-      <Product />
-      <Services />
+      <ProductList />
       <Footer />
-    </main>
+    </div>
   );
 };
 

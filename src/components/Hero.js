@@ -5,25 +5,23 @@ import hero3 from "../Images/unsplash.jpg";
 
 const Hero = () => {
   return (
-    <Main className="container text-transform: capitalize">
-      <section className="relative">
-        <img src={hero3} alt="my-hero" className="image" />
+    <Main className="container">
+      <div className="relative text-white">
+        <img src={hero3} alt="my-hero" className="" />
 
-        <div className="text-3xl md:text-5xl text-white font-bold">
-          <div className="absolute bottom-40 left-10">
-            <p className=" text-white">
-              grab upto 50% off on <br />
-              selected kicks
-            </p>
-            <Link
-              to="/products"
-              className="text-white text-sm bg-green-700 p-2 pr-4 pl-4 rounded-full font-medium text-transform: capitalize md:text-xl"
-            >
-              buy now
-            </Link>
-          </div>
+        <div className="absolute bottom-14 lg:bottom-52 left-10">
+          <p className="text-3xl lg:text-5xl font-semibold capitalize mb-3">
+            grab upto 50% off on <br />
+            selected kicks
+          </p>
+          <Link
+            to="/products"
+            className="text-xl lg:text-2xl font-semibold capitalize bg-green-700 px-4 py-2 rounded-full"
+          >
+            buy now
+          </Link>
         </div>
-      </section>
+      </div>
     </Main>
   );
 };

@@ -6,21 +6,15 @@ import "../index.css";
 const Services = () => {
   return (
     <Main className="container ">
-      <h2 className="text-2xl lg:text-3xl textbold mt-4 mb-2 text-center text-green-700 font-bold">
-        Services
-      </h2>
-      <section className="grid grid-rows-3 lg:grid-cols-3">
+      <h2 className="">Services</h2>
+      <section className="">
         {servicesOffer.map((services) => {
           return (
-            <article key={services.id} className="text-center p-5 relative ">
-              <div className="box p-5">
-                <h3 className="text-xl font-bold capitalize text-gray-700">
-                  {services.service}
-                </h3>
-                <p className="text-green-700 font-medium">{services.text}</p>
-                <span className="absolute top-9 right-6 text-green-700">
-                  {services.icon}
-                </span>
+            <article key={services.id} className=" ">
+              <div className="">
+                <h3 className="">{services.service}</h3>
+                <p className="">{services.text}</p>
+                <span className="">{services.icon}</span>
               </div>
             </article>
           );
