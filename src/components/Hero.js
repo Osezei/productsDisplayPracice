@@ -10,13 +10,13 @@ const Hero = () => {
         <img src={hero3} alt="my-hero" className="" />
 
         <div className="absolute bottom-14 lg:bottom-52 left-10">
-          <p className="text-3xl lg:text-5xl font-semibold capitalize mb-3">
+          <p className="text-3xl lg:text-5xl font-semibold capitalize mb-10">
             grab upto 50% off on <br />
             selected kicks
           </p>
           <Link
             to="/products"
-            className="text-xl lg:text-2xl font-semibold capitalize bg-green-700 px-4 py-2 rounded-full"
+            className="text-sm lg:text-lg font-medium capitalize bg-green-700 px-6 py-4 rounded-full"
           >
             buy now
           </Link>

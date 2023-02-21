@@ -38,7 +38,7 @@ const ProductList = () => {
         <h2 className="">Products</h2>
       </div> */}
       {/* listing */}
-      <div className="grid grid-flow-col-3">
+      <div className="flex justify-between">
         {/* section */}
         <section>
           {/* <div>
@@ -61,9 +61,8 @@ const ProductList = () => {
               );
             })}
           </ul> */}
-          <div className="">
+          <div className="flex justify-between">
             {/* <h3>brand</h3>
-
             <ul>
               {["all", ...new Set(company_list)].map((item, index) => {
                 return (
@@ -79,9 +78,9 @@ const ProductList = () => {
               })}
             </ul> */}
 
-            <div className="">
-              <h3 className="font-medium text-xl">Price :</h3>
-              <p className="font-medium text-xl  pl-2 pr-2">${price}</p>
+            <div className="flex justify-between">
+              <h3 className="font-medium text-lg">Price :</h3>
+              <p className="font-medium text-lg  pl-2 pr-2 w-20">${price}</p>
               <input
                 type="range"
                 name={price}
@@ -89,7 +88,7 @@ const ProductList = () => {
                 max={max_price}
                 value={price}
                 onChange={(e) => updatePrice(e.target.value)}
-                className="mx-2"
+                className="mr-5"
               />
             </div>
 
@@ -120,7 +119,7 @@ const ProductList = () => {
         </div>
       </div>
       {/* end of list */}
-      <div className="pt-8 pb-4 font-semibold text-2xl">
+      <div className="pt-16 pb-4 font-semibold text-2xl">
         <p>{noOfProducts} products are available!</p>
       </div>
       <div className="grid grid-cols-3 gap-10">
@@ -160,6 +159,8 @@ const ProductList = () => {
 export default ProductList;
 
 const Main = styled.div`
+  .page-height {
+  }
   .image-container {
     width: 100%;
     height: 200px;
