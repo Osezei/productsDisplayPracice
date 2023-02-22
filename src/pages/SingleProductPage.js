@@ -41,22 +41,19 @@ const SingleProductPage = function () {
       <Navigation />
       <SideBar />
       <section className="container page">
-        <div className="flex pt-10 pb-20">
-          <Link
-            to="/products"
-            className="flex bg-green-700 pt-2 pb-2 pr-4 pl-4 rounded-full items-center font-semibold text-white"
-          >
-            <span className="pr-2">
-              <AiOutlineArrowLeft />
-            </span>
-            View Products <span className="pl-1">/ {single.name}</span>
-          </Link>{" "}
+        <div className="flex py-10">
+          <p className="flex text-lg">
+            <Link to="/products" className="flex items-center font-medium pr-1">
+              View Products
+            </Link>{" "}
+            <span className="font-semibold"> / {single.name}</span>
+          </p>
         </div>
         {/* <h3>{single.name}</h3> */}
         {/* picture and info section */}
         <div className="grid grid-cols-2 gap-10">
           <div>
-            <img src={single.image} alt={single.name} />
+            <img src={single.image} alt={single.name} className="w-full" />
           </div>
           <div>
             <h3 className="font-semibold text-4xl pb-4">{single.name}</h3>

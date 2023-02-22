@@ -33,7 +33,7 @@ const ProductList = () => {
   //   });
   // }
   return (
-    <Main className="container py-10">
+    <Main className="container py-10 page">
       {/* <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
         <h2 className="">Products</h2>
       </div> */}

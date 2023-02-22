@@ -34,5 +34,5 @@ body {
   }
 }
 .page {
-  /* height: 90vh; */
+  min-height: 90vh;
 }

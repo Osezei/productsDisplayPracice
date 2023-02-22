@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Product = () => {
   return (
-    <Main className="container ">
+    <Main className="container page">
       <div>
         <h2 className="text-2xl lg:text-3xl textbold text-white bg-green-700 font-bold text-center p-2">
           Features
