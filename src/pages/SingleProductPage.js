@@ -6,6 +6,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BsStarFill } from "react-icons/bs";
 import { BsStarHalf } from "react-icons/bs";
 import { BsStar } from "react-icons/bs";
+import styled from "styled-components";
 
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
@@ -36,26 +37,26 @@ const SingleProductPage = function () {
     );
   });
   return (
-    <div>
+    <Main>
       <Header />
       <Navigation />
       <SideBar />
       <section className="container page">
         <div className="flex py-10">
-          <p className="flex text-lg">
+          <p className="flex text-base">
             <Link to="/products" className="flex items-center font-medium pr-1">
-              View Products
+              View Products /
             </Link>{" "}
-            <span className="font-semibold"> / {single.name}</span>
+            <span className="font-semibold"> {single.name}</span>
           </p>
         </div>
         {/* <h3>{single.name}</h3> */}
         {/* picture and info section */}
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-2">
           <div>
-            <img src={single.image} alt={single.name} className="w-full" />
+            <img src={single.image} alt={single.name} className="image" />
           </div>
-          <div>
+          <div className="px-12">
             <h3 className="font-semibold text-4xl pb-4">{single.name}</h3>
             <p>{single.description}</p>
             <h1 className="flex pt-2 pb-2 text-green-700">{tempRating}</h1>
@@ -106,8 +107,13 @@ const SingleProductPage = function () {
         </div>
       </section>
       <Footer />
-    </div>
+    </Main>
   );
 };
 
 export default SingleProductPage;
+const Main = styled.div`
+  .image {
+    min-width: 100%;
+  }
+`;
