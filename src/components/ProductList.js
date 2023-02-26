@@ -38,7 +38,7 @@ const ProductList = () => {
         <h2 className="">Products</h2>
       </div> */}
       {/* listing */}
-      <div className="flex justify-between">
+      <div className="w-full md:flex justify-between">
         {/* section */}
         <section>
           {/* <div>
@@ -88,14 +88,14 @@ const ProductList = () => {
                 max={max_price}
                 value={price}
                 onChange={(e) => updatePrice(e.target.value)}
-                className="w-14 mr-2 lg:mr-5 lg:w-full"
+                className="w-20 mr-2 lg:mr-5 lg:w-full"
               />
             </div>
 
             <div>
               <button
                 onClick={clearFilters}
-                className=" rounded-full p-1 py-1 lg:px-2 bg-green-700 hover:bg-red-700 text-white text-sm"
+                className="rounded-sm md:rounded-full p-1 py-1 lg:px-2 bg-green-700 hover:bg-red-700 text-white text-sm"
               >
                 Clear filters
               </button>
