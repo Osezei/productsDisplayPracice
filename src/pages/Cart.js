@@ -12,7 +12,7 @@ const Cart = () => {
     decreaseCart,
     removeItem,
   } = useGlobalContext();
-  const { loginWithRedirect, myUser, logout } = useUserContext();
+  //const { loginWithRedirect, myUser, logout } = useUserContext();
   if (cart.length < 1) {
     return (
       <section>

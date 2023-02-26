@@ -78,9 +78,9 @@ const ProductList = () => {
               })}
             </ul> */}
 
-            <div className="flex justify-between">
-              <h3 className="font-medium text-lg">Price :</h3>
-              <p className="font-medium text-lg  pl-2 pr-2 w-20">${price}</p>
+            <div className="flex  justify-between text-sm font-normal lg:text-lg lg:font-medium">
+              <h3 className="">Price :</h3>
+              <p className=" px-2 w-14 lg:w-20">${price}</p>
               <input
                 type="range"
                 name={price}
@@ -88,7 +88,7 @@ const ProductList = () => {
                 max={max_price}
                 value={price}
                 onChange={(e) => updatePrice(e.target.value)}
-                className="mr-5"
+                className="w-20 mr-2 lg:mr-5 lg:w-full"
               />
             </div>
 
@@ -122,7 +122,7 @@ const ProductList = () => {
       <div className="pt-16 pb-4 font-semibold text-2xl">
         <p>{noOfProducts} products are available!</p>
       </div>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid lg:grid-cols-3 gap-10">
         {products.map((footWears) => {
           const { image, name, id, price, description } = footWears;
           return (

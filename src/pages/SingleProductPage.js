@@ -60,8 +60,8 @@ const SingleProductPage = function () {
             <h3 className="font-semibold text-4xl pb-4">{single.name}</h3>
             <p>{single.description}</p>
             <h1 className="flex pt-2 pb-2 text-green-700">{tempRating}</h1>
-            <h2 className="font-semibold text-xl">
-              <span className="font-medium">Price :</span> ${single.price}
+            <h2 className="font-semibold text-xl pt-4">
+              <span className="font-medium ">Price :</span> ${single.price}
             </h2>
 
             <div className="font-medium text-xl">
@@ -96,6 +96,7 @@ const SingleProductPage = function () {
                 +
               </button>
             </div>
+            {/* <p> {tempStock}</p> */}
             <Link
               to="/cart"
               onClick={() => addToCart(single.id, tempStock, single)}
