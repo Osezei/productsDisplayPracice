@@ -78,9 +78,9 @@ const ProductList = () => {
               })}
             </ul> */}
 
-            <div className="flex  justify-between text-sm font-normal lg:text-lg lg:font-medium">
+            <div className="flex items-center justify-between text-sm font-normal lg:text-lg lg:font-medium">
               <h3 className="">Price :</h3>
-              <p className=" px-2 w-14 lg:w-20">${price}</p>
+              <p className=" pl-1 w-12 lg:w-20 lg:px-2">${price}</p>
               <input
                 type="range"
                 name={price}
@@ -103,12 +103,12 @@ const ProductList = () => {
           </div>
         </section>
         <div className="flex justify-between items-center">
-          <span className="pr-2">Sort by</span>
+          <span className="pr-1 lg:pr-2">Sort by</span>
           <div>
             <select
               name=""
               onChange={(e) => sort(e.target.value)}
-              className=" border-black border-solid border-2 rounded-full"
+              className=" border-black border-solid border-0 md:border-2 rounded-full"
             >
               <option value="lowest">Price (Lowest)</option>
               <option value="highest">Price (Highest)</option>
