@@ -42,7 +42,7 @@ const reducer = function (state, action) {
     let products = state.allKicks;
 
     products = products.filter(
-      (product) => product.category_list === action.payload
+      (product) => product.category === action.payload
     );
     return {
       ...state,
@@ -60,9 +60,7 @@ const reducer = function (state, action) {
   if (action.type === "COMPANY_HANDLE") {
     let products = state.allKicks;
 
-    products = products.filter(
-      (product) => product.company_list === action.payload
-    );
+    products = products.filter((product) => product.company === action.payload);
     return {
       ...state,
       products,

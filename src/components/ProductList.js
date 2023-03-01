@@ -4,34 +4,34 @@ import { useGlobalContext } from "../context/context";
 import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
 
-const ProductList = () => {
+const ProductList = function () {
   const {
     products,
     price,
     max_price,
     min_price,
-    sort,
-    category,
-    company,
+    sortHandler,
+    categoryHandle,
+    companyHandle,
     updatePrice,
     activeFilter,
     clearFilters,
   } = useGlobalContext();
 
   const noOfProducts = products.length;
-  let category_list = [];
-  let company_list = [];
+  let category = [];
+  let company = [];
 
-  // {
-  //   footWears.map((product) => {
-  //     category_list.push(product.category_list);
-  //   });
-  // }
-  // {
-  //   footWears.map((product) => {
-  //     company_list.push(product.company_list);
-  //   });
-  // }
+  {
+    footWears.map((product) => {
+      category.push(product.category);
+    });
+  }
+  {
+    footWears.map((product) => {
+      company.push(product.company);
+    });
+  }
   return (
     <Main className="container py-10 page">
       {/* <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
@@ -41,42 +41,46 @@ const ProductList = () => {
       <div className="w-full md:flex justify-between">
         {/* section */}
         <section>
-          {/* <div>
-            <h3>category</h3>
-          </div> */}
-          {/* <ul>
-            {["all", ...new Set(category_list)].map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  className={`${
-                    activeFilter === item ? "text-[red] font-bold" : null
-                  }`}
-                  onClick={() => {
-                    category(item);
-                  }}
-                >
-                  {item}
-                </li>
-              );
-            })}
-          </ul> */}
-          <div className="flex justify-between">
-            {/* <h3>brand</h3>
-            <ul>
-              {["all", ...new Set(company_list)].map((item, index) => {
+          <div className="flex">
+            <div className="text-sm font-semibold">
+              <h3>Category:</h3>
+            </div>
+            <ul className="flex">
+              {["all", ...new Set(category)].map((item, index) => {
                 return (
                   <li
                     key={index}
+                    className={`${
+                      activeFilter === item.toLowerCase()
+                        ? "text-[red] text-lg font-bold"
+                        : "text-green-700 text-lg"
+                    }`}
                     onClick={() => {
-                      company(item);
+                      categoryHandle(item);
                     }}
                   >
                     {item}
                   </li>
                 );
               })}
-            </ul> */}
+            </ul>
+          </div>
+          <div className="flex justify-between">
+            <h3>brand</h3>
+            <ul>
+              {["all", ...new Set(company)].map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      companyHandle(item);
+                    }}
+                  >
+                    {item}
+                  </li>
+                );
+              })}
+            </ul>
 
             <div className="flex items-center justify-between text-sm font-normal lg:text-lg lg:font-medium">
               <h3 className="">Price :</h3>
@@ -88,7 +92,7 @@ const ProductList = () => {
                 max={max_price}
                 value={price}
                 onChange={(e) => updatePrice(e.target.value)}
-                className="w-20 mr-2 lg:mr-5 lg:w-full"
+                className="w-20 mr-2 lg:mr-5"
               />
             </div>
 
@@ -107,7 +111,7 @@ const ProductList = () => {
           <div>
             <select
               name=""
-              onChange={(e) => sort(e.target.value)}
+              onChange={(e) => sortHandler(e.target.value)}
               className=" border-black border-solid border-0 md:border-2 rounded-full"
             >
               <option value="lowest">Price (Lowest)</option>

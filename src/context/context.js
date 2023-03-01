@@ -40,15 +40,15 @@ const AppProvider = function ({ children }) {
     dispatch({ type: "SET_PRICE" });
   }, []);
 
-  const sort = (value) => {
+  const sortHandler = (value) => {
     dispatch({ type: "SORT_HANDLE", payload: value });
   };
 
-  const category = (value) => {
+  const categoryHandle = (value) => {
     dispatch({ type: "CATEGORY_HANDLE", payload: value });
   };
 
-  const company = (value) => {
+  const companyHandle = (value) => {
     dispatch({ type: "COMPANY_HANDLE", payload: value });
   };
 
@@ -89,9 +89,9 @@ const AppProvider = function ({ children }) {
         ...state,
         decreaseAmount,
         increaseAmount,
-        sort,
-        category,
-        company,
+        sortHandler,
+        categoryHandle,
+        companyHandle,
         updatePrice,
         clearFilters,
         addToCart,

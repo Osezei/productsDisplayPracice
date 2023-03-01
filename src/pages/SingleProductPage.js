@@ -37,7 +37,7 @@ const SingleProductPage = function () {
     );
   });
   return (
-    <Main>
+    <Main className="">
       <Header />
       <Navigation />
       <SideBar />
@@ -52,11 +52,11 @@ const SingleProductPage = function () {
         </div>
         {/* <h3>{single.name}</h3> */}
         {/* picture and info section */}
-        <div className="grid grid-cols-2">
+        <div className="grid grid-rows-2 lg:grid-cols-2">
           <div>
             <img src={single.image} alt={single.name} className="image" />
           </div>
-          <div className="px-12">
+          <div className="px-1 lg:px-12">
             <h3 className="font-semibold text-4xl pb-4">{single.name}</h3>
             <p>{single.description}</p>
             <h1 className="flex pt-2 pb-2 text-green-700">{tempRating}</h1>
@@ -116,5 +116,6 @@ export default SingleProductPage;
 const Main = styled.div`
   .image {
     min-width: 100%;
+    min-height: 100%;
   }
 `;
