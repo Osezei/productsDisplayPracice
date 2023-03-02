@@ -12,7 +12,9 @@ const Cart = () => {
     decreaseCart,
     removeItem,
   } = useGlobalContext();
-  //const { loginWithRedirect, myUser, logout } = useUserContext();
+
+  const { loginWithRedirect, myUser, logout } = useUserContext();
+
   if (cart.length < 1) {
     return (
       <section>
@@ -109,6 +111,11 @@ const Cart = () => {
           <span>${total_amount.toFixed(2)}</span>
         </div>
       </div>
+      {myUser ? (
+        <Link to="/checkout">Proceed to checkout</Link>
+      ) : (
+        <button onClick={loginWithRedirect}>Login</button>
+      )}
     </section>
   );
 };

@@ -19,9 +19,11 @@ root.render(
       redirectUri={window.location.origin}
       cacheLocation="localstorage"
     >
-      <AppProvider>
-        <App />
-      </AppProvider>
+      <UserProvider>
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </UserProvider>
     </Auth0Provider>
   </React.StrictMode>
 );

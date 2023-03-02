@@ -34,54 +34,56 @@ const ProductList = function () {
   }
   return (
     <Main className="container py-10 page">
-      {/* <div className="text-3xl textbold mt-4 mb-4 text-center text-green-700 font-bold">
-        <h2 className="">Products</h2>
-      </div> */}
-      {/* listing */}
+      <div className="hidden md:flex items-center capitalize">
+        <div className="text-base font-medium pr-1">
+          <h3>Category:</h3>
+        </div>
+        <ul className="flex text-base font-medium cursor-pointer">
+          {["all", ...new Set(category)].map((item, index) => {
+            return (
+              <li
+                key={index}
+                className={`${
+                  activeFilter === item.toLowerCase()
+                    ? "text-green-700 px-1"
+                    : "px-1"
+                }`}
+                onClick={() => {
+                  categoryHandle(item);
+                }}
+              >
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="hidden md:flex capitalize  text-lg items-center pb-4 pt-2">
+        <h3 className="pr-1 font-medium">Brand:</h3>
+        <ul className="flex font-medium cursor-pointer">
+          {["all", ...new Set(company)].map((item, index) => {
+            return (
+              <li
+                key={index}
+                className={`${
+                  activeFilter === item.toLowerCase()
+                    ? "text-green-700 px-1"
+                    : "px-1"
+                }`}
+                onClick={() => {
+                  companyHandle(item);
+                }}
+              >
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <div className="w-full md:flex justify-between">
         {/* section */}
         <section>
-          <div className="flex">
-            <div className="text-sm font-semibold">
-              <h3>Category:</h3>
-            </div>
-            <ul className="flex">
-              {["all", ...new Set(category)].map((item, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={`${
-                      activeFilter === item.toLowerCase()
-                        ? "text-[red] text-lg font-bold"
-                        : "text-green-700 text-lg"
-                    }`}
-                    onClick={() => {
-                      categoryHandle(item);
-                    }}
-                  >
-                    {item}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
           <div className="flex justify-between">
-            <h3>brand</h3>
-            <ul>
-              {["all", ...new Set(company)].map((item, index) => {
-                return (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      companyHandle(item);
-                    }}
-                  >
-                    {item}
-                  </li>
-                );
-              })}
-            </ul>
-
             <div className="flex items-center justify-between text-sm font-normal lg:text-lg lg:font-medium">
               <h3 className="">Price :</h3>
               <p className=" pl-1 w-12 lg:w-20 lg:px-2">${price}</p>
@@ -122,6 +124,7 @@ const ProductList = function () {
           </div>
         </div>
       </div>
+
       {/* end of list */}
       <div className="pt-16 pb-4 font-semibold text-2xl">
         <p>{noOfProducts} products are available!</p>

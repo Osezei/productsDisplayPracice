@@ -38,10 +38,7 @@ const SingleProductPage = function () {
   });
   return (
     <Main className="">
-      <Header />
-      <Navigation />
-      <SideBar />
-      <section className="container page">
+      <section className="container">
         <div className="flex py-10">
           <p className="flex text-base">
             <Link to="/products" className="flex items-center font-medium pr-1">
@@ -107,7 +104,6 @@ const SingleProductPage = function () {
           </div>
         </div>
       </section>
-      <Footer />
     </Main>
   );
 };

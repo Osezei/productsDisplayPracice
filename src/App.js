@@ -8,6 +8,7 @@ import SingleProductPage from "./pages/SingleProductPage";
 import Error from "./pages/Error";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import PrivateRoute from "./pages/PrivateRoute";
 
 function App() {
   return (
@@ -21,7 +22,15 @@ function App() {
 
         <Route exact path="/products/:id" element={<SingleProductPage />} />
 
-        <Route exact path="/checkout" element={<Checkout />} />
+        <Route
+          exact
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        />
 
         <Route exact path="*" element={<Error />} />
       </Routes>
