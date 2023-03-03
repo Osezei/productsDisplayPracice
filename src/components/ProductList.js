@@ -34,7 +34,7 @@ const ProductList = function () {
   }
   return (
     <Main className="container py-10 page">
-      <div className="hidden md:flex items-center capitalize">
+      <div className="hidden">
         <div className="text-base font-medium pr-1">
           <h3>Category:</h3>
         </div>
@@ -58,7 +58,7 @@ const ProductList = function () {
           })}
         </ul>
       </div>
-      <div className="hidden md:flex capitalize  text-lg items-center pb-4 pt-2">
+      <div className="hidden">
         <h3 className="pr-1 font-medium">Brand:</h3>
         <ul className="flex font-medium cursor-pointer">
           {["all", ...new Set(company)].map((item, index) => {

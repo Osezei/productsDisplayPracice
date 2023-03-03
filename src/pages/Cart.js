@@ -45,7 +45,9 @@ const Cart = () => {
               <tbody key={id}>
                 <tr>
                   <td>
-                    <button onClick={() => removeItem(id)}>click</button>
+                    <button type="button" onClick={() => removeItem(id)}>
+                      click to remove
+                    </button>
                     <img src={image} alt={name} />
                     {name}
                   </td>

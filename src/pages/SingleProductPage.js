@@ -8,11 +8,6 @@ import { BsStarHalf } from "react-icons/bs";
 import { BsStar } from "react-icons/bs";
 import styled from "styled-components";
 
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import SideBar from "../components/SideBar";
-import Footer from "../components/Footer";
-
 const SingleProductPage = function () {
   const { id } = useParams();
 
@@ -37,23 +32,27 @@ const SingleProductPage = function () {
     );
   });
   return (
-    <Main className="">
-      <section className="container">
+    <Main className="py-10">
+      <section className="container page">
         <div className="flex py-10">
           <p className="flex text-base">
-            <Link to="/products" className="flex items-center font-medium pr-1">
+            <Link to="/" className="flex items-center font-medium pr-1">
               View Products /
             </Link>{" "}
             <span className="font-semibold"> {single.name}</span>
           </p>
         </div>
-        {/* <h3>{single.name}</h3> */}
+
         {/* picture and info section */}
-        <div className="grid grid-rows-2 lg:grid-cols-2">
-          <div>
-            <img src={single.image} alt={single.name} className="image" />
+        <div className="grid grid-cols-1 lg:flex pb-7 lg:pb-0 gap-x-20">
+          <div className="">
+            <img
+              src={single.image}
+              alt={single.name}
+              className="w-[80rem] h-[30rem] mb-5 rounded-sm"
+            />
           </div>
-          <div className="px-1 lg:px-12">
+          <div className="h-1/2">
             <h3 className="font-semibold text-4xl pb-4">{single.name}</h3>
             <p>{single.description}</p>
             <h1 className="flex pt-2 pb-2 text-green-700">{tempRating}</h1>
@@ -74,21 +73,19 @@ const SingleProductPage = function () {
               </span>
             </div>
 
-            <div className="flex items-center  pb-4">
+            <div className="">
               <button
                 type="button"
                 onClick={() => decreaseAmount(tempStock, single.stock)}
-                className="text-2xl pr-3 pl-3"
+                className=""
               >
                 -
               </button>
-              <span className="font-semibold text-4xl pr-5 pl-5">
-                {tempStock}
-              </span>
+              <span className="">{tempStock}</span>
               <button
                 type="button"
                 onClick={() => increaseAmount(tempStock, single.stock)}
-                className="text-2xl pr-3 pl-3"
+                className=""
               >
                 +
               </button>
@@ -97,7 +94,7 @@ const SingleProductPage = function () {
             <Link
               to="/cart"
               onClick={() => addToCart(single.id, tempStock, single)}
-              className="capitalize bg-green-700 pt-2 pb-2 pr-4 pl-4 rounded-full  items-center font-semibold text-white"
+              className="capitalize bg-green-700 rounded-full  items-center font-semibold text-white"
             >
               add to cart
             </Link>
@@ -111,7 +108,6 @@ const SingleProductPage = function () {
 export default SingleProductPage;
 const Main = styled.div`
   .image {
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
   }
 `;

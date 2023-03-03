@@ -15,10 +15,10 @@ const Hero = () => {
             selected kicks
           </p>
           <Link
-            to="/products"
+            to="/contact"
             className="text-sm lg:text-lg font-medium capitalize bg-green-700 px-6 py-4 rounded-full hover:text-green-700 hover:bg-white"
           >
-            buy now
+            get in touch
           </Link>
         </div>
       </div>

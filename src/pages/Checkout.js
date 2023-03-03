@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { PaystackButton } from "react-paystack";
 import { useGlobalContext } from "../context/context";
 
 const publicKey = "pk_test_48943d1c6b316f95f54ff9bc7d5f15cdade0bef0";
@@ -53,6 +54,7 @@ const Checkout = () => {
           placeholder="Enter your phone"
         />
       </div>
+      <PaystackButton {...componentProps} />
     </section>
   );
 };
