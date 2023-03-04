@@ -17,33 +17,28 @@ const Navigation = () => {
   //   setStatus(e.target.checked);
   //};
   return (
-    <Main className="container">
-      {/* <Link to="/" className="bg-green-700">
-        <span>
-          <FaKickstarter />
-        </span>
-        icks
-      </Link>
+    <Main className="container flex justify-between">
+      <div className="flex">
+        <Link to="/" className=" flex items-center text-xl font-semibold">
+          <span className="text-2xl">
+            <FaKickstarter />
+          </span>
+          icks
+        </Link>
+      </div>
 
-      <label htmlFor="check" className="flex lg:hidden">
-        <input
-          type="checkbox"
-          id="check"
-          value={status}
-          onChange={(e) => handleChange(e)}
-        />
-      </label>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link> */}
-      <h1>Navigation</h1>
+      <div>
+        <Link to="/">About</Link>
+        <Link to="/contact">Contact</Link>
+      </div>
+
+      <div>
+        <FiUser />
+      </div>
     </Main>
   );
 };
 
 export default Navigation;
 
-const Main = styled.div`
-  .image {
-    width: 5%;
-  }
-`;
+const Main = styled.div``;

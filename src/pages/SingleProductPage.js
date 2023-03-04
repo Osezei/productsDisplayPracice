@@ -73,19 +73,19 @@ const SingleProductPage = function () {
               </span>
             </div>
 
-            <div className="">
+            <div className="text-2xl mb-6 bg-gray-100 items-center rounded-full py-3 px-10 w-48">
               <button
                 type="button"
                 onClick={() => decreaseAmount(tempStock, single.stock)}
-                className=""
+                className="font-medium"
               >
                 -
               </button>
-              <span className="">{tempStock}</span>
+              <span className="font-semibold px-7">{tempStock}</span>
               <button
                 type="button"
                 onClick={() => increaseAmount(tempStock, single.stock)}
-                className=""
+                className="font-medium"
               >
                 +
               </button>
@@ -94,9 +94,9 @@ const SingleProductPage = function () {
             <Link
               to="/cart"
               onClick={() => addToCart(single.id, tempStock, single)}
-              className="capitalize bg-green-700 rounded-full  items-center font-semibold text-white"
+              className=" bg-green-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-4 hover:bg-[white] hover:text-green-700 border-4"
             >
-              add to cart
+              Add to Cart
             </Link>
           </div>
         </div>
