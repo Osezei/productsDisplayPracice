@@ -1,20 +1,16 @@
 import React from "react";
 import AboutPic from "../Images/my_hero.png";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
 
 const About = () => {
   return (
-    <section>
-      <Header />
-      <Navigation />
-      <main className="container">
-        <h3>About</h3>
-        <div className="flex">
-          <img src={AboutPic} alt="aboutPic" className="w-full" />
-
-          <p className="p-10 mt-auto mb-auto">
+    <main className="container">
+      <div className="block lg:flex">
+        <img src={AboutPic} alt="aboutPic" className="w-full" />
+        <div className="my-auto">
+          <h2 className="hidden lg:block text-center text-green-700 text-4xl font-semibold pb-2">
+            About
+          </h2>
+          <p className=" py-5 lg:px-5">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
             voluptate corporis laudantium illum odit cum veritatis nisi at! Sunt
             modi, vel possimus, saepe error, harum totam consequatur cupiditate
@@ -29,9 +25,8 @@ const About = () => {
             dolorum quia.
           </p>
         </div>
-      </main>
-      <Footer />
-    </section>
+      </div>
+    </main>
   );
 };
 

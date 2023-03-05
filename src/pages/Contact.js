@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <section className="container page">
-      <div>
+      {/* <div className="text-center">
         <h2 className="font-semibold text-3xl text-green-700">Contact</h2>
-      </div>
+      </div> */}
       <div className="pt-16">
         <p className="text-2xl lg:px-24 lg:text-center">
           Hi, I'm Osezei; a{" "}

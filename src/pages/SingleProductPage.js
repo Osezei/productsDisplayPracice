@@ -73,7 +73,7 @@ const SingleProductPage = function () {
               </span>
             </div>
 
-            <div className="text-2xl mb-6 bg-gray-100 items-center rounded-full py-3 px-10 w-48">
+            <div className=" text-2xl mb-6 bg-gray-100 items-center rounded-full py-3 px-10 w-48">
               <button
                 type="button"
                 onClick={() => decreaseAmount(tempStock, single.stock)}
