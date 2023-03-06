@@ -16,7 +16,7 @@ const Hero = () => {
           </p>
           <Link
             to="/contact"
-            className="text-sm lg:text-lg font-medium capitalize bg-green-700 px-6 py-4 rounded-full hover:text-green-700 hover:bg-white"
+            className="button text-sm lg:text-lg font-medium capitalize bg-green-700 px-6 py-4 rounded-full hover:text-green-700 hover:bg-white"
           >
             get in touch
           </Link>

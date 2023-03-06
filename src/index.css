@@ -47,5 +47,7 @@ ul {
 a {
   text-decoration: none;
 }
-
+.button {
+  transition: 0.3s;
+}
 /* background: none repeat scroll 0 0 transparent; */

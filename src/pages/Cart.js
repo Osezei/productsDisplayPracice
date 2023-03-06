@@ -17,11 +17,20 @@ const Cart = function () {
 
   if (cart.length < 1) {
     return (
-      <section>
-        <div>
-          <h2>Cart</h2>
-          <h3>Your Cart is empty</h3>
-          <Link to="/">view products</Link>
+      <section className="container page">
+        <div className="">
+          {/* <h2 className="pt-4 text-3xl font-semibold text-green-700">Cart</h2> */}
+          <div className="text-center">
+            <h3 className="text-4xl font-semibold pt-44 pb-10 text-green-700">
+              Your Cart is empty
+            </h3>
+            <Link
+              to="/"
+              className="button bg-green-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-4 hover:bg-[white] hover:text-green-700 border-4"
+            >
+              view products
+            </Link>
+          </div>
         </div>
       </section>
     );

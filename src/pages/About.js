@@ -4,7 +4,7 @@ import AboutPic from "../Images/my_hero.png";
 const About = () => {
   return (
     <main className="container">
-      <div className="block lg:flex lg:pb-5">
+      <div className="block lg:flex lg:py-5">
         <img src={AboutPic} alt="aboutPic" className="w-full" />
         <div className="my-auto">
           <h2 className="hidden lg:block text-center text-green-700 text-4xl font-semibold pb-2">

@@ -101,7 +101,7 @@ const ProductList = function () {
             <div>
               <button
                 onClick={clearFilters}
-                className="rounded-sm md:rounded-full p-1 py-1 lg:px-2 bg-green-700 hover:bg-red-700 text-white text-sm"
+                className="button rounded-sm md:rounded-full p-1 py-1 lg:px-2 bg-green-700 hover:bg-red-700 text-white text-sm"
               >
                 Clear filters
               </button>
@@ -149,7 +149,7 @@ const ProductList = function () {
               </div>
               <div className="text-sm font-semibold pt-6 pb-3 ">
                 <Link
-                  className="border-solid border-2 pt-4 pb-4 pr-10 pl-10 border-green-700 rounded-full hover:text-white hover:bg-green-700"
+                  className="button border-solid border-2 pt-4 pb-4 pr-10 pl-10 border-green-700 rounded-full hover:text-white hover:bg-green-700"
                   to={`/products/${id}`}
                 >
                   View Product

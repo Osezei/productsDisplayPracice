@@ -59,7 +59,7 @@ const Main = styled.div`
     display: block;
     height: 5px;
     width: 0;
-    background: green;
+    background: #288f5a;
     transition: 0.3s;
   }
   .title:hover::after {
