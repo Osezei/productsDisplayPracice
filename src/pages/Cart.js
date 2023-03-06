@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import { useUserContext } from "../userContext";
 
-const Cart = () => {
+const Cart = function () {
   const {
     cart,
     clearCart,
@@ -21,7 +21,7 @@ const Cart = () => {
         <div>
           <h2>Cart</h2>
           <h3>Your Cart is empty</h3>
-          <Link to="/products">view products</Link>
+          <Link to="/">view products</Link>
         </div>
       </section>
     );
@@ -113,11 +113,12 @@ const Cart = () => {
           <span>${total_amount.toFixed(2)}</span>
         </div>
       </div>
-      {myUser ? (
+      {/* {myUser ? (
         <Link to="/checkout">Proceed to checkout</Link>
       ) : (
         <button onClick={loginWithRedirect}>Login</button>
-      )}
+      )} */}
+      <Link to="/checkout">Proceed to checkout</Link>
     </section>
   );
 };

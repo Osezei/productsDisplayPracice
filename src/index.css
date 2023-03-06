@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  padding: 0;
+*,
+::after,
+::before {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 .container {
@@ -45,3 +47,5 @@ ul {
 a {
   text-decoration: none;
 }
+
+/* background: none repeat scroll 0 0 transparent; */
