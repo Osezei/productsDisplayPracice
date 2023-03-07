@@ -81,7 +81,7 @@ const AppProvider = function ({ children }) {
     dispatch({ type: "DECREASE_CART", payload: { id, value, max } });
   };
   const removeItem = (id) => {
-    dispatch({ type: "REMOVE_ITEM", payload: { id } });
+    dispatch({ type: "REMOVE_ITEM", payload: id });
   };
   return (
     <AppContext.Provider

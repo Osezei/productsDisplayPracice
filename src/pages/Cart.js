@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import { useUserContext } from "../userContext";
+import { MdCancel } from "react-icons/md";
 
 const Cart = function () {
   const {
@@ -13,7 +14,7 @@ const Cart = function () {
     removeItem,
   } = useGlobalContext();
 
-  const { loginWithRedirect, myUser, logout } = useUserContext();
+  //const { loginWithRedirect, myUser, logout } = useUserContext();
 
   if (cart.length < 1) {
     return (
@@ -36,9 +37,11 @@ const Cart = function () {
     );
   }
   return (
-    <section>
-      <h2>Cart</h2>
-      <div>
+    <section className="container page">
+      <h2 className="text-3xl my-14 font-thin">
+        <span className="text-4xl font-semibold">C</span>art
+      </h2>
+      <div className="hidden lg:block">
         <table>
           <thead>
             <tr>
@@ -53,25 +56,30 @@ const Cart = function () {
             return (
               <tbody key={id}>
                 <tr>
-                  <td>
-                    <button type="button" onClick={() => removeItem(id)}>
-                      click to remove
-                    </button>
-                    <img src={image} alt={name} />
-                    {name}
+                  <td className="flex items-center">
+                    <MdCancel
+                      className="w-5 h-5 cursor-pointer text-red-700"
+                      onClick={() => removeItem(id)}
+                    />
+                    <img
+                      src={image}
+                      alt={name}
+                      className="w-[5rem] h-[5rem] mx-5"
+                    />
+                    <p className="text-2xl">{name}</p>
                   </td>
 
                   <td>${price.toFixed(2)}</td>
 
-                  <td>
-                    <div>
+                  <td className="text-3xl font-medium">
+                    <div className="items-center">
                       <button
                         type="button"
                         onClick={() => decreaseCart(id, amount, max)}
                       >
                         -
                       </button>
-                      <span>{amount}</span>
+                      <span className="mx-5">{amount}</span>
                       <button
                         type="button"
                         onClick={() => increaseCart(id, amount, max)}
@@ -90,14 +98,18 @@ const Cart = function () {
       {cart.map((item) => {
         const { image, name, price, amount, max, id } = item;
         return (
-          <div key={id}>
-            <div>
+          <div
+            key={id}
+            className="grid gap-x-5 grid-cols-3 items-center mb-7 lg:hidden"
+          >
+            <div className="flex items-center">
               <div>
-                <button type="button" onClick={() => removeItem(id)}>
-                  remove
-                </button>
+                <MdCancel
+                  className="w-5 h-5 cursor-pointer text-red-700"
+                  onClick={() => removeItem(id)}
+                />
               </div>
-              <img src={image} alt={name} />
+              <img src={image} alt={name} className="h-15 w-20" />
             </div>
             <div>
               <h2>{name}</h2>
@@ -111,15 +123,25 @@ const Cart = function () {
           </div>
         );
       })}
-      <div>
-        <Link to="/products">continue shoppping</Link>
+      <div className="mt-10 flex justify-center">
+        <Link
+          to="/"
+          className="mr-4 bg-green-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-4 hover:bg-[white] hover:text-green-700 border-4 button"
+        >
+          Continue Shopping
+        </Link>
 
-        <button onClick={clearCart}>clear shopping cart</button>
+        <button
+          onClick={clearCart}
+          className="bg-red-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-3 hover:bg-[white] hover:text-red-700 border-4 button"
+        >
+          Clear Shopping Cart
+        </button>
       </div>
       <div>
-        <div>
-          <h2>order total :</h2>
-          <span>${total_amount.toFixed(2)}</span>
+        <div className="mt-5 flex border border-r-4 py-5 justify-center">
+          <h2 className="mr-5">Order Total:</h2>
+          <span className="font-semibold">${total_amount.toFixed(2)}</span>
         </div>
       </div>
       {/* {myUser ? (

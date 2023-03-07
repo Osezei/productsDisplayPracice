@@ -118,6 +118,7 @@ const reducer = function (state, action) {
       const newItem = {
         id: id,
         name: product.name,
+        amount,
         image: product.image,
         price: product.price,
         max: product.stock,
@@ -151,7 +152,7 @@ const reducer = function (state, action) {
     let tempValue = value - 1;
     if (tempValue < 1) {
       tempValue = 1;
-      return { ...state, tempValue };
+      return { ...state, tempStock: tempValue };
     }
     return {
       ...state,
