@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 const Contact = () => {
   return (
@@ -20,14 +21,16 @@ const Contact = () => {
           <h3 className="pb-10 uppercase text-xl text-text-color mb-2 text-green-700">
             Send me a message
           </h3>
-          <a
-            className=" text-5xl lg:text-6xl font-semibold text-text-color underline underline-offset-4 mail "
-            href="mailto:john.osezei@yahoo.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            john.osezei@yahoo.com
-          </a>
+          <div className="animate__animated animate__slideInUp">
+            <a
+              className=" text-5xl lg:text-6xl font-semibold text-text-color underline underline-offset-4 mail "
+              href="mailto:john.osezei@yahoo.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              john.osezei@yahoo.com
+            </a>
+          </div>
         </div>
       </div>
     </section>

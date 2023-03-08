@@ -18,10 +18,10 @@ const Navigation = () => {
   //   setStatus(e.target.checked);
   //};
   return (
-    <Main className="container flex justify-between text-center pb-1 text-green-700">
+    <Main className="container flex justify-between text-center py-2 text-green-700">
       <div className="flex">
         <Link to="/" className=" flex items-center text-2xl font-semibold">
-          <span className="text-4xl">
+          <span className="text-4xl animate__animated animate__fadeInLeft">
             <FaKickstarter />
           </span>
           icks

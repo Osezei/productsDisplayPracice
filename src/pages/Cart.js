@@ -109,31 +109,31 @@ const Cart = function () {
                   onClick={() => removeItem(id)}
                 />
               </div>
-              <img src={image} alt={name} className="h-15 w-20" />
+              <img src={image} alt={name} className="ml-2 h-20 w-30" />
             </div>
             <div>
-              <h2>{name}</h2>
-              <span>${price.toFixed(2)}</span>
+              <h2 className="text-lg">{name}</h2>
+              <span className="font-semibold">${price.toFixed(2)}</span>
             </div>
-            <div>
+            <div className="flex items-center">
               <button onClick={() => decreaseCart(id, amount, max)}>-</button>
-              <span>{amount}</span>
+              <span className="font-semibold mx-3 text-2xl">{amount}</span>
               <button onClick={() => increaseCart(id, amount, max)}>+</button>
             </div>
           </div>
         );
       })}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 block lg:flex justify-center">
         <Link
           to="/"
-          className="mr-4 bg-green-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-4 hover:bg-[white] hover:text-green-700 border-4 button"
+          className=" mr-4 bg-green-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-4 hover:bg-[white] hover:text-green-700 border-4 button"
         >
           Continue Shopping
         </Link>
 
         <button
           onClick={clearCart}
-          className="bg-red-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-3 hover:bg-[white] hover:text-red-700 border-4 button"
+          className="mt-5 lg:mt-0 bg-red-700 rounded-full  items-center font-semibold text-lg text-white px-10 py-3 hover:bg-[white] hover:text-red-700 border-4 button"
         >
           Clear Shopping Cart
         </button>

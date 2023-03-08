@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import { footWears } from "../utils/Data";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 const ProductList = function () {
   const {

@@ -1,12 +1,18 @@
 import React from "react";
 import AboutPic from "../Images/my_hero.png";
+import styled from "styled-components";
+import "animate.css";
 
 const About = () => {
   return (
-    <main className="container">
+    <Main className="container trans">
       <div className="block lg:flex lg:py-5">
-        <img src={AboutPic} alt="aboutPic" className="w-full" />
-        <div className="my-auto">
+        <img
+          src={AboutPic}
+          alt="aboutPic"
+          className="w-full animate__animated animate__slideInUp"
+        />
+        <div className="my-auto animate__animated animate__slideInDown">
           <h2 className="hidden lg:block text-center text-green-700 text-4xl font-semibold pb-2">
             About
           </h2>
@@ -26,8 +32,14 @@ const About = () => {
           </p>
         </div>
       </div>
-    </main>
+    </Main>
   );
 };
 
 export default About;
+
+const Main = styled.div`
+  .trans {
+    transform: scaleY(0);
+  }
+`;
