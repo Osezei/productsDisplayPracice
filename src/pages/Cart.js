@@ -109,9 +109,9 @@ const Cart = function () {
                   onClick={() => removeItem(id)}
                 />
               </div>
-              <img src={image} alt={name} className="ml-2 h-20 w-30" />
+              <img src={image} alt={name} className="ml-2 h-20 w-[15rem]" />
             </div>
-            <div>
+            <div className="ml-5">
               <h2 className="text-lg">{name}</h2>
               <span className="font-semibold">${price.toFixed(2)}</span>
             </div>
