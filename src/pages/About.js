@@ -5,7 +5,7 @@ import "animate.css";
 
 const About = () => {
   return (
-    <Main className="container trans">
+    <Main className="container">
       <div className="block lg:flex lg:py-5">
         <img
           src={AboutPic}
@@ -16,7 +16,7 @@ const About = () => {
           <h2 className="hidden lg:block text-center text-green-700 text-4xl font-semibold pb-2">
             About
           </h2>
-          <p className=" py-5 lg:px-5">
+          <p className=" py-5 lg:px-5 about-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
             voluptate corporis laudantium illum odit cum veritatis nisi at! Sunt
             modi, vel possimus, saepe error, harum totam consequatur cupiditate

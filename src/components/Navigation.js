@@ -47,7 +47,7 @@ const Navigation = () => {
             <div className="text-xl bg-white font-semibold w-[20rem] absolute top-[5rem] right-[2rem] z-40 shadow-lg">
               <div className="grid grid-cols-1 items-center gap-y-2 pt-2">
                 <Link to="/about">About</Link>
-                <Link to="/products">Products</Link>
+                <Link to="/contact">Contact</Link>
                 {myUser && <Link to="/checkout">Checkout</Link>}
               </div>
               <div className="flex justify-center py-3 text-2xl ">
@@ -103,7 +103,7 @@ const Navigation = () => {
           Cart
           <span className="relative">
             <BsCart4 />
-            <span className="bg-green-700 text-white absolute top-[-10px] right-[-10px] text-lg p-1 w-7 h-7 flex items-center justify-center rounded-full">
+            <span className="bg-green-700 text-white absolute top-[-12px] right-[-15px] text-lg p-1 w-7 h-7 flex items-center justify-center rounded-full">
               {total_items}
             </span>
           </span>

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800&display=swap");
 *,
 ::after,
@@ -20,6 +20,9 @@ body {
   /* font-family: "Archivo", sans-serif; */
   /* font-family: "Tilt Warp", cursive; */
   font-family: "Nunito Sans", sans-serif;
+}
+.about-content {
+  font-family: "Tilt Warp", cursive;
 }
 /* 1088px */
 @media (max-width: 68em) {
